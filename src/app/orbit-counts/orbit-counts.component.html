@@ -1,0 +1,30 @@
+<!-- <h3>Satellite Counts:</h3>
+<div class="counts" >
+ <div >Total: <span>{{satellites.length}}</span></div>
+ <div> Total Space Debris: <span>1</span></div>
+ <div>Total Communication: <span>2</span></div>
+ <div>Total Probe: <span>2</span></div>
+ <div>Total Positioning: <span>1</span></div>
+ <div>Total Space Station: <span>2</span></div>
+ <div>Total Telescope: <span>1</span></div>
+</div> -->
+
+<h3>Satellite Counts:</h3>
+<div class="counts">
+ <ul >
+   <li>Total: <span>{{satellites.length}}</span></li>
+   <!-- <li>space debris: <span>{{satellites.countTypes('Space Debris')}}</span></li> -->
+ <li *ngFor ="let item of allTypes" >Total {{item}}: <span>{{countTypes(item)}}</span></li>   
+   
+  
+  
+ </ul>
+</div>
+ <!-- <div>Total: <span>{{satellites.length}}</span></div>
+ <div> Total Space Debris: <span>1</span></div>
+ <div>Total Communication: <span>2</span></div>
+ <div>Total Probe: <span>2</span></div>
+ <div>Total Positioning: <span>1</span></div>
+ <div>Total Space Station: <span>2</span></div>
+ <div>Total Telescope: <span>1</span></div>
+</div> -->
