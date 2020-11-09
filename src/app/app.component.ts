@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { type } from 'os';
+// import { type } from 'os';
 import { Satellite } from './satellite';
 @Component({
   selector: 'app-root',
@@ -10,6 +10,8 @@ export class AppComponent {
   title = 'orbit-report';
   sourceList: Satellite[];
   displayList: Satellite[];
+  
+
   constructor() {
    this.sourceList = [];
    this.displayList= [];
@@ -21,14 +23,14 @@ export class AppComponent {
          let fetchedSatellites = data.satellites;
          
             for (let i =0;i<fetchedSatellites.length;i++){
-              new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].launchDate, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational);
+             let satellite= new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].launchDate, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational);
               
-              this.sourceList.push(fetchedSatellites[i]);
+              this.sourceList.push(satellite);
             }
              this.displayList = this.sourceList.slice(0);
       }.bind(this));
    }.bind(this));
-
+ 
 }
 
 search(searchTerm: string): void {
